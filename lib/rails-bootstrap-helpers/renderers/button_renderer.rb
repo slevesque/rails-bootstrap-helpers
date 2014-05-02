@@ -4,21 +4,37 @@ module RailsBootstrapHelpers::Renderers
 
     def render
       append_class "btn"
+      append_style
+      append_size
+      append_disabled
+      append_icon
 
+      super
+    end
+
+    private
+
+    def append_style
       if (style = has_option?("style"))
         append_class "btn-" + style.to_s
       else
         append_class "btn-default"
       end
+    end
 
+    def append_size
       if size = has_option?("size")
         append_class "btn-" + size.to_s
       end
+    end
 
+    def append_disabled
       if disabled = has_option?("disabled")
         append_class "disabled"
       end
+    end
 
+    def append_icon
       if icon = has_option?("icon")
         pos = has_option?("icon_position")
         icon_args = [icon, invert: has_option?("icon_invert")]
@@ -33,11 +49,7 @@ module RailsBootstrapHelpers::Renderers
       else
         strip_unused_options!
       end
-
-      super
     end
-
-  private
 
     def strip_unused_options!
       has_option?("icon_position")
