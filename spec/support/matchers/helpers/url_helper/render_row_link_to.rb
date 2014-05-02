@@ -8,7 +8,7 @@ RSpec::Matchers.define :render_row_link_to do |text|
   end
 
   def html_attributes
-    attrs = { href: url, class: cls }
+    attrs = { class: cls }
 
     if tooltip?
       if tooltip_position?
@@ -16,7 +16,10 @@ RSpec::Matchers.define :render_row_link_to do |text|
       end
 
       attrs[:"data-toggle"] = "tooltip"
+      attrs[:href] = url
       attrs[:title] = options[:tooltip]
+    else
+      attrs[:href] = url
     end
 
     attrs.map { |k, v| "#{k}=\"#{v}\"" }.join(" ")
