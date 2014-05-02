@@ -26,8 +26,8 @@ describe RailsBootstrapHelpers::Helpers::NavigationHelper do
     html = <<-eos
 <div class="#{html_class}">
   <ul class="nav nav-tabs">
-    <li class="active"><a href="##{foo_tab_id}" data-toggle="tab">foo</a></li>
-    <li><a href="##{bar_tab_id}" data-toggle="tab">bar</a></li>
+    <li class="active"><a data-toggle="tab" href="##{foo_tab_id}">foo</a></li>
+    <li><a data-toggle="tab" href="##{bar_tab_id}">bar</a></li>
   </ul>
 
   <div class="tab-content">
@@ -74,8 +74,8 @@ describe RailsBootstrapHelpers::Helpers::NavigationHelper do
           html = <<-eos
 <div class="tabbable">
   <ul class="nav nav-tabs">
-    <li class="active"><a href="##{foo_tab_id}" data-toggle="tab">foo</a></li>
-    <li><a href="##{bar_tab_id}" data-toggle="tab">bar</a></li>
+    <li class="active"><a data-toggle="tab" href="##{foo_tab_id}">foo</a></li>
+    <li><a data-toggle="tab" href="##{bar_tab_id}">bar</a></li>
   </ul>
 
   <div class="tab-content">
@@ -104,8 +104,8 @@ describe RailsBootstrapHelpers::Helpers::NavigationHelper do
           expected_html = <<-eos
 <div class="tabbable">
   <ul class="nav nav-tabs">
-    <li><a href="##{foo_tab_id}" data-toggle="tab">foo</a></li>
-    <li class="active"><a href="##{bar_tab_id}" data-toggle="tab">bar</a></li>
+    <li><a data-toggle="tab" href="##{foo_tab_id}">foo</a></li>
+    <li class="active"><a data-toggle="tab" href="##{bar_tab_id}">bar</a></li>
   </ul>
 
   <div class="tab-content">
@@ -142,8 +142,8 @@ describe RailsBootstrapHelpers::Helpers::NavigationHelper do
           expected_html = <<-eos
 <div class="tabbable">
   <ul class="nav nav-tabs">
-    <li><a href="##{foo_tab_id}" data-toggle="tab">foo</a></li>
-    <li><a href="##{bar_tab_id}" data-toggle="tab">bar</a></li>
+    <li><a data-toggle="tab" href="##{foo_tab_id}">foo</a></li>
+    <li><a data-toggle="tab" href="##{bar_tab_id}">bar</a></li>
   </ul>
 
   <div class="tab-content">
