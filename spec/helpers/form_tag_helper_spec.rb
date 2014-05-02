@@ -2,8 +2,20 @@ require "spec_helper"
 
 describe RailsBootstrapHelpers::Helpers::FormTagHelper do
   describe "bs_button_tag" do
-    it { should render_bs_button_tag("foo", :submit) }
-    it { should render_bs_button_tag("bar", :reset) }
+    it { should render_bs_button_tag("foo") }
+
+    context "with type" do
+      it { should render_bs_button_tag("foo", :submit) }
+      it { should render_bs_button_tag("bar", :reset) }
+    end
+
+    context "with options" do
+      it { should render_bs_button_tag("foo").with_style(:primary) }
+
+      context "with type" do
+        it { should render_bs_button_tag("foo", :submit).with_style(:primary) }
+      end
+    end
 
     context "with style" do
       it { should render_bs_button_tag("foo", :submit).with_style(:default) }

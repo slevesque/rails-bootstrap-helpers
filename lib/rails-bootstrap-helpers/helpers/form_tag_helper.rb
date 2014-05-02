@@ -3,8 +3,9 @@ module RailsBootstrapHelpers::Helpers::FormTagHelper
   # <tt>button_tag</tt> but will render a Bootstrap styled button tag instead.
   #
   # @params value [String] the text of the button
-  # @params type [String, Symbol] the type of the button. Adds a "type"
-  #         attribute to the tag
+  # @params type_or_options [String, Symbol, Hash] the type of the button.
+  #         Adds a "type" attribute to the tag. If a hash, it's considered to
+  #         be options and type will be :button.
   #
   # @params options [Hash] a hash of options
   #
@@ -14,8 +15,13 @@ module RailsBootstrapHelpers::Helpers::FormTagHelper
   # @option options [String] :icon the name of an icon to render on the button
   # @option options ["left", "right"] :icon_position ("left") the post of the icon, if present
   # @option options [Boolean] :icon_invert (left) if the color of the icon should be inverted
-  def bs_button_tag (value, type, options = {}, &block)
-    options = options.merge type: type
+  def bs_button_tag (value, type_or_options = :button, options = {}, &block)
+    if type_or_options.is_a?(Hash)
+      options = type_or_options
+      type_or_options = :button
+    end
+
+    options = options.merge type: type_or_options
     RailsBootstrapHelpers::Renderers::ButtonRenderer.new(self, :button, value, options, &block).render
   end
 

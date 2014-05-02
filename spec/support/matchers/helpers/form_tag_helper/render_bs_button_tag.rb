@@ -74,7 +74,7 @@ RSpec::Matchers.define :render_bs_button_tag do |text, type|
   end
 
   def type
-    @type
+    @type || :button
   end
 
   def style?
