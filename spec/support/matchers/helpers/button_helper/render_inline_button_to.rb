@@ -4,7 +4,7 @@ RSpec::Matchers.define :render_inline_button_to do |url, icon|
   end
 
   def cls
-    @cls ||= "inline btn btn-#{options[:size]}"
+    @cls ||= "inline btn btn-default btn-#{options[:size]}"
   end
 
   def text_with_icon
@@ -12,10 +12,7 @@ RSpec::Matchers.define :render_inline_button_to do |url, icon|
   end
 
   def attributes
-    attrs = {
-      href: url,
-      class: cls
-    }
+    attrs = { class: cls, href: url }
 
     attrs = attrs.map do |k, v|
       "#{k}=\"#{v}\""

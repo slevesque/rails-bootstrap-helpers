@@ -10,7 +10,8 @@ RSpec::Matchers.define :render_bs_button_tag do |text, type|
   def cls
     @cls ||= begin
       cls = "btn"
-      cls << " btn-#{options[:style]}" if style?
+      style = style? ? options[:style] : :default
+      cls << " btn-#{style}"
       cls << " btn-#{options[:size]}" if size?
       cls
     end

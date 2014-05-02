@@ -10,7 +10,8 @@ RSpec::Matchers.define :render_bs_button_to do |text|
   def cls
     @cls ||= begin
       cls = extra_class.present? ? "#{extra_class} btn" : "btn"
-      cls << " btn-#{options[:style]}" if style?
+      style = style? ? options[:style] : :default
+      cls << " btn-#{style}"
       cls << " btn-#{options[:size]}" if size?
       cls
     end
@@ -36,7 +37,7 @@ RSpec::Matchers.define :render_bs_button_to do |text|
   end
 
   def html_attributes
-    attrs = { href: url, class: cls }
+    attrs = { class: cls }
 
     if tooltip?
       if tooltip_position?
@@ -44,7 +45,10 @@ RSpec::Matchers.define :render_bs_button_to do |text|
       end
 
       attrs[:"data-toggle"] = "tooltip"
+      attrs[:href] = url
       attrs[:title] = options[:tooltip]
+    else
+      attrs[:href] = url
     end
 
     attrs.map { |k, v| "#{k}=\"#{v}\"" }.join(" ")

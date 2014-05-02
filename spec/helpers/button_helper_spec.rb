@@ -11,7 +11,7 @@ describe RailsBootstrapHelpers::Helpers::ButtonHelper do
     context "with url" do
       it { should render_bs_button_to("foo").to("bar") }
     end
-    
+
     context "with style" do
       it { should render_bs_button_to("foo") }
       it { should render_bs_button_to("foo").with_style(:default) }
@@ -23,14 +23,14 @@ describe RailsBootstrapHelpers::Helpers::ButtonHelper do
       it { should render_bs_button_to("foo").with_style(:inverse) }
       it { should render_bs_button_to("foo").with_style(:link) }
     end
-    
+
     context "with size" do
       it { should render_bs_button_to("foo").with_size(:default) }
       it { should render_bs_button_to("foo").with_size(:large) }
       it { should render_bs_button_to("foo").with_size(:small) }
       it { should render_bs_button_to("foo").with_size(:mini) }
     end
-    
+
     context "with icon" do
       it { should render_bs_button_to("foo").with_icon(:ok) }
       it { should render_bs_button_to("foo").with_icon(:edit) }
@@ -60,7 +60,7 @@ describe RailsBootstrapHelpers::Helpers::ButtonHelper do
 
   describe "bs_inline_button_to" do
     it { should render_inline_button_to("foo", "edit") }
-    
+
     context "with size" do
       it { should render_inline_button_to("foo", "edit").with_size(:large) }
       it { should render_inline_button_to("foo", "edit").with_size(:small) }
@@ -71,11 +71,11 @@ describe RailsBootstrapHelpers::Helpers::ButtonHelper do
   describe "bs_popover_button" do
     let(:attributes) do
       {
-        href: '#',
-        class: "btn",
+        class: "btn btn-default",
         :"data-content" => "bar",
         :"data-placement" => "bottom",
-        :"data-toggle" => "popover"
+        :"data-toggle" => "popover",
+        href: '#'
       }
     end
 
@@ -107,7 +107,7 @@ describe RailsBootstrapHelpers::Helpers::ButtonHelper do
   describe "bs_collapsible_button" do
     let(:attributes) do
       {
-        class: "btn",
+        class: "btn btn-default",
         :"data-target" => "bar",
         :"data-toggle" => "collapse",
         name: "button",
@@ -163,7 +163,7 @@ describe RailsBootstrapHelpers::Helpers::ButtonHelper do
     let(:expected_html) do
       html = <<-eos
 <div class="btn-group">
-  <button class="dropdown-toggle btn" data-toggle="dropdown" name="button">
+  <button class="dropdown-toggle btn btn-default" data-toggle="dropdown" name="button">
     foo <span class="caret"></span>
   </button>
   <ul class="dropdown-menu">
@@ -189,8 +189,8 @@ describe RailsBootstrapHelpers::Helpers::ButtonHelper do
       let(:expected_html) do
         html = <<-eos
 <div class="btn-group">
-  <a href="https://github.com" class="btn">foo</a>
-  <button class="dropdown-toggle btn" data-toggle="dropdown" name="button">
+  <a class="btn btn-default" href="https://github.com">foo</a>
+  <button class="dropdown-toggle btn btn-default" data-toggle="dropdown" name="button">
     <span class="caret"></span>
   </button>
   <ul class="dropdown-menu">
@@ -217,8 +217,8 @@ describe RailsBootstrapHelpers::Helpers::ButtonHelper do
       let(:expected_html) do
         html = <<-eos
   <div class="btn-group">
-    <button class="dropdown-toggle btn" data-toggle="dropdown" name="button">
-      <i class="icon-search"></i> foo <span class="caret"></span>
+    <button class="dropdown-toggle btn btn-default" data-toggle="dropdown" name="button">
+      <span class="glyphicon glyphicon-search"></span> foo <span class="caret"></span>
     </button>
     <ul class="dropdown-menu">
       <li><a href="http://www.google.com">bar</a></li>
@@ -244,8 +244,8 @@ describe RailsBootstrapHelpers::Helpers::ButtonHelper do
       let(:expected_html) do
         html = <<-eos
 <div class="btn-group">
-  <a href="https://github.com" class="btn"><i class="icon-search"></i> foo</a>
-  <button class="dropdown-toggle btn" data-toggle="dropdown" name="button">
+  <a class="btn btn-default" href="https://github.com"><span class="glyphicon glyphicon-search"></span> foo</a>
+  <button class="dropdown-toggle btn btn-default" data-toggle="dropdown" name="button">
     <span class="caret"></span>
   </button>
   <ul class="dropdown-menu">
@@ -272,8 +272,8 @@ describe RailsBootstrapHelpers::Helpers::ButtonHelper do
       let(:expected_html) do
         html = <<-eos
 <div class="btn-group">
-  <a href="https://github.com" class="btn btn-success">foo</a>
-  <button class="dropdown-toggle btn-success btn" data-toggle="dropdown" name="button">
+  <a class="btn btn-success" href="https://github.com">foo</a>
+  <button class="dropdown-toggle btn btn-success" data-toggle="dropdown" name="button">
     <span class="caret"></span>
   </button>
   <ul class="dropdown-menu">

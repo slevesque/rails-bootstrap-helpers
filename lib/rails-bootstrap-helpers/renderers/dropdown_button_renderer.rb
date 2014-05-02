@@ -51,12 +51,9 @@ module RailsBootstrapHelpers::Renderers
         data = opts[:data] || {}
         data[:toggle] = "dropdown"
         opts[:data] = data
+        opts[:style] = options[:style]
 
         append_class!(opts, "dropdown-toggle")
-
-        if (style = options[:style]) && style != "default"
-          append_class!(opts, "btn-#{style}")
-        end
 
         opts
       end

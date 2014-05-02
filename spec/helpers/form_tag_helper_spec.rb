@@ -15,14 +15,14 @@ describe RailsBootstrapHelpers::Helpers::FormTagHelper do
       it { should render_bs_button_tag("foo", :submit).with_style(:inverse) }
       it { should render_bs_button_tag("foo", :submit).with_style(:link) }
     end
-    
+
     context "with size" do
       it { should render_bs_button_tag("foo", :submit).with_size(:default) }
       it { should render_bs_button_tag("foo", :submit).with_size(:large) }
       it { should render_bs_button_tag("foo", :submit).with_size(:small) }
       it { should render_bs_button_tag("foo", :submit).with_size(:mini) }
     end
-    
+
     context "with icon" do
       it { should render_bs_button_tag("foo", :submit).with_icon(:ok) }
       it { should render_bs_button_tag("foo", :submit).with_icon(:edit) }
