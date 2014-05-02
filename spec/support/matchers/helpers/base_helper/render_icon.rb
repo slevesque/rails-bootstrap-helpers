@@ -15,7 +15,7 @@ RSpec::Matchers.define :render_icon do |icon|
 
   def cls
     @cls ||= begin
-      base_class = "icon-#{icon}"
+      base_class = "glyphicon glyphicon-#{icon}"
       cls = extra_class.present? ? extra_class + " " + base_class : base_class
       cls << " icon-white" if invert?
       cls
@@ -23,7 +23,7 @@ RSpec::Matchers.define :render_icon do |icon|
   end
 
   def expected
-    @render_icon_expected ||= "<i class=\"#{cls}\"></i>"
+    @render_icon_expected ||= "<span class=\"#{cls}\"></span>"
   end
 
   def got

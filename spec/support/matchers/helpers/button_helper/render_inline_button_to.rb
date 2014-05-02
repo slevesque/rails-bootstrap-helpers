@@ -8,7 +8,7 @@ RSpec::Matchers.define :render_inline_button_to do |url, icon|
   end
 
   def text_with_icon
-    "<i class=\"icon-#{icon}\"></i> "
+    "<span class=\"glyphicon glyphicon-#{icon}\"></span> "
   end
 
   def attributes

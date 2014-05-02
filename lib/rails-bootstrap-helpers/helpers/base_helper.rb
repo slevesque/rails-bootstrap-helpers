@@ -12,19 +12,17 @@ module RailsBootstrapHelpers::Helpers::BaseHelper
     options = options.dup
 
     icon = ERB::Util.html_escape(icon.to_s)
-    append_class!(options, "icon-" + icon)
+    append_class!(options, "glyphicon glyphicon-" + icon)
 
     if options.delete(:invert)
       append_class!(options, "icon-white")
     end
 
-    cls = options[:class]
-
-    "<i class=\"#{cls}\"></i>".html_safe
+    content_tag :span, nil, class: options[:class]
   end
 
   # Renders the given Iconic icon.
-  # 
+  #
   # This is the Iconic icons from Jasny Bootstrap.
   # Renders an <tt>i</tt> tag with the class "iconic-#{icon}"
   #

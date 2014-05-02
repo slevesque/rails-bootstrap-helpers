@@ -18,9 +18,9 @@ RSpec::Matchers.define :render_bs_button_tag do |text, type|
 
   def text_with_icon
     if icon?
-      cls = "icon-#{options[:icon]}"
+      cls = "glyphicon glyphicon-#{options[:icon]}"
       cls << " icon-white" if inverted?
-      icon = "<i class=\"#{cls}\"></i>"
+      icon = "<span class=\"#{cls}\"></span>"
       default = icon + " " + text
 
       if icon_position?
