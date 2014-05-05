@@ -69,13 +69,17 @@ describe RailsBootstrapHelpers::Helpers::ButtonHelper do
   end
 
   describe "bs_popover_button" do
+    let(:html) { "<button #{html_attributes}>foo</button>" }
+
     let(:attributes) do
       {
         class: "btn btn-default",
+        :"data-container" => "body",
         :"data-content" => "bar",
         :"data-placement" => "bottom",
         :"data-toggle" => "popover",
-        href: '#'
+        name: "button",
+        type: "button"
       }
     end
 

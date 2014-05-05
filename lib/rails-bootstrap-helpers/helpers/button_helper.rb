@@ -58,11 +58,14 @@ module RailsBootstrapHelpers::Helpers::ButtonHelper
 
       position = options.delete(:position) || placement || "bottom"
 
-      options = options.reverse_merge :"data-content" => content_or_options,
-        :"data-toggle" => "popover",
-        :"data-placement" => position
+      options = options.reverse_merge data: {
+        content: content_or_options,
+        toggle: "popover",
+        placement: position,
+        container: "body"
+      }
 
-      bs_button_to(name, '#', options)
+      bs_button_tag(name, options)
     end
   end
 
