@@ -25,6 +25,7 @@ module RailsBootstrapHelpers
     autoload :LabelHelper, "rails-bootstrap-helpers/helpers/label_helper"
     autoload :TagHelper, "rails-bootstrap-helpers/helpers/tag_helper"
     autoload :NavigationHelper, "rails-bootstrap-helpers/helpers/navigation_helper"
+    autoload :ContentHelper, "rails-bootstrap-helpers/helpers/content_helper"
   end
 end
 

@@ -468,6 +468,50 @@ Add the option `direction`, with the value `"top"`, `"left"`, `"right"` or
 [Bootstrap documentation](http://getbootstrap.com/2.3.2/components.html#navs)
 [Jasny Bootstrap documentation](http://jasny.github.io/bootstrap/components.html#navs)
 
+### <a id="content"></a>Content
+
+#### <a id="popover"></a>popover
+
+Renders a popover.
+
+```erb
+<%= popover "Title", "Content" %>
+```
+
+Renders the following HTML:
+
+```html
+<div class="popover right">
+  <div class="arrow"></div>
+  <h3 class="popover-title">Title</h3>
+  <div class="popover-content">Content</div>
+</div>
+```
+
+Using a block for the content.
+
+```erb
+<%= popover "Title" do %>
+  <p>Content</p>
+<% end %>
+```
+
+Specify the position of the popover.
+
+```erb
+<%= popover "Title", "Content", position: "left" %>
+```
+
+Block and options.
+
+```erb
+<%= popover "Title", position: "left" do %>
+  <p>Content</p>
+<% end %>
+```
+
+[Bootstrap documentation](http://getbootstrap.com/javascript/#popovers)
+
 ## Tests
 
 Run the tests using RSpec
