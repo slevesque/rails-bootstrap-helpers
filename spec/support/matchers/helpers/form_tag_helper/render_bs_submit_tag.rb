@@ -3,14 +3,14 @@ RSpec::Matchers.define :render_bs_submit_tag do |text, type|
     @options ||= { }
   end
 
-  def append_style (style)
-    " btn-#{style}"
+  def style
+    style? ? options[:style] : 'default'
   end
 
   def cls
     @cls ||= begin
       cls = "btn"
-      cls << " btn-#{options[:style]}" if style?
+      cls << " btn-#{style}"
       cls << " btn-#{options[:size]}" if size?
       cls
     end
@@ -36,7 +36,7 @@ RSpec::Matchers.define :render_bs_submit_tag do |text, type|
   end
 
   def expected
-    @render_button_expected ||= "<input class=\"#{cls}\" name=\"commit\" type=\"submit\" value=\"#{text}\" />"
+    @render_button_expected ||= "<button class=\"#{cls}\" name=\"button\" type=\"submit\">#{text}</button>"
   end
 
   def got

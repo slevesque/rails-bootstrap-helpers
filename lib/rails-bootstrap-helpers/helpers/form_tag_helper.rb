@@ -37,24 +37,6 @@ module RailsBootstrapHelpers::Helpers::FormTagHelper
   # All the other options are passed straight through to the underlying
   # <tt>submit_tag</tt> method.
   def bs_submit_tag (value, options = {})
-    options = options.dup
-
-    if options[:class].present?
-      options[:class] << " "
-    else
-      options[:class] = ""
-    end
-
-    options[:class] << "btn"
-
-    if style = options.delete(:style)
-      options[:class] << " btn-" + style.to_s
-    end
-
-    if size = options.delete(:size)
-      options[:class] << " btn-" + size.to_s
-    end
-
-    submit_tag value, options
+    bs_button_tag value, :submit, options
   end
 end
