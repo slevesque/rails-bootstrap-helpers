@@ -56,7 +56,7 @@ def abstract(*args)
 
       def self.inherited (subclass)
         subclass.send(:define_method, :initialize) do |*args|
-          __abstract_initialize__ *args
+          __abstract_initialize__(*args)
         end
       end
     end

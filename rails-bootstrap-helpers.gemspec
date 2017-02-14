@@ -13,17 +13,15 @@ Gem::Specification.new do |s|
   s.license     = "MIT"
 
   s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.md"]
-  s.test_files = Dir["spec/**/*"]
+  s.test_files = Dir["test/**/*"]
+  s.require_paths = ["lib"]
 
-  s.add_dependency 'rails', '>= 3.2.11'
+  s.add_dependency 'rails', '5.0.0.1'
 
-  s.add_development_dependency "guard-rspec"
-  s.add_development_dependency "guard-spork"
   s.add_development_dependency "pry-doc"
   s.add_development_dependency "pry-exception_explorer"
   s.add_development_dependency "pry-rails"
   s.add_development_dependency "pry-stack_explorer"
-  s.add_development_dependency "rspec-rails"
-  s.add_development_dependency "spork"
-  s.add_development_dependency "sqlite3"
+  s.add_development_dependency "bundler"
+  s.add_development_dependency "rake"
 end

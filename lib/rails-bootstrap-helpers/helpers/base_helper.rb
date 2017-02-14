@@ -12,13 +12,39 @@ module RailsBootstrapHelpers::Helpers::BaseHelper
     options = options.dup
 
     icon = ERB::Util.html_escape(icon.to_s)
-    append_class!(options, "glyphicon glyphicon-" + icon)
+    #TODO: Add configuration option to switch between glyphicon and
+    #font-awesome
+    append_class!(options, "fa fa-" + icon)
 
-    if options.delete(:invert)
-      append_class!(options, "icon-white")
+    if options.has_key?(:text)
+      content_tag(:span) do
+        content_tag(:span, nil, class: options[:class]) +
+        " " + options[:text]
+      end
+    else
+      content_tag(:span, nil, class: options[:class])
     end
+    # if options.delete(:invert)
+    #   append_class!(options, "icon-white")
+    # end
 
-    content_tag :span, nil, class: options[:class]
+    # content_tag :span, nil, class: options[:class]
+  end
+
+  def fa_icon(icon, options={})
+    options = options.dup
+
+    icon = ERB::Util.html_escape(icon.to_s)
+    append_class!(options, "fa fa-" + icon)
+
+    if options.has_key?(:text)
+      content_tag(:span) do
+        content_tag(:span, nil, class: options[:class]) +
+        " " + options[:text]
+      end
+    else
+      content_tag(:span, nil, class: options[:class])
+    end
   end
 
   # Renders the given Iconic icon.

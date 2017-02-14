@@ -125,6 +125,7 @@ module RailsBootstrapHelpers::Helpers::ButtonHelper
   # @param block [Proc] the block should render a the dropdown menu items in the
   #        form of list items with links.
   def bs_dropdown_button_to (text, url_or_options = nil, options = {}, &block)
-    RailsBootstrapHelpers::Renderers::DropdownButtonRenderer.new(self, text, url_or_options, options, &block).render
+    RailsBootstrapHelpers::Renderers::DropdownButtonRenderer.
+      new(self, text, url_or_options, options, &block).render
   end
 end

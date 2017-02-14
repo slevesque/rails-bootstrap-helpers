@@ -76,7 +76,11 @@ module RailsBootstrapHelpers::Renderers
     end
 
     def render_menu
-      content_tag :ul, class: "dropdown-menu" do
+      css = "dropdown-menu"
+      if @options.has_key?(:align)
+        css += " dropdown-menu-#{@options[:align]}"
+      end
+      content_tag :ul, class: css do
         template.capture(&block)
       end
     end
