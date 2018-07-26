@@ -8,39 +8,22 @@ module RailsBootstrapHelpers::Helpers::BaseHelper
   # @param icon [String, Symbol] the kind of icon to render
   #
   # @option options [Boolean] :invert (false) if the color of the icon should be inverted
+  def icon_set(options)
+    return "fal" if !options.has_key?(:icon_set)
+    options[:icon_set]
+  end
+
   def icon (icon, options = {})
     options = options.dup
 
     icon = ERB::Util.html_escape(icon.to_s)
-    #TODO: Add configuration option to switch between glyphicon and
-    #font-awesome
-    append_class!(options, "fa fa-" + icon)
+
+    append_class!(options, "#{icon_set(options)} fa-" + icon)
 
     if options.has_key?(:text)
       content_tag(:span) do
         content_tag(:span, nil, class: options[:class]) +
-        " " + options[:text]
-      end
-    else
-      content_tag(:span, nil, class: options[:class])
-    end
-    # if options.delete(:invert)
-    #   append_class!(options, "icon-white")
-    # end
-
-    # content_tag :span, nil, class: options[:class]
-  end
-
-  def fa_icon(icon, options={})
-    options = options.dup
-
-    icon = ERB::Util.html_escape(icon.to_s)
-    append_class!(options, "fa fa-" + icon)
-
-    if options.has_key?(:text)
-      content_tag(:span) do
-        content_tag(:span, nil, class: options[:class]) +
-        " " + options[:text]
+          " #{options[:text]}".html_safe
       end
     else
       content_tag(:span, nil, class: options[:class])

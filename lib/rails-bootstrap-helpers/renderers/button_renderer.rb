@@ -18,7 +18,7 @@ module RailsBootstrapHelpers::Renderers
       if (style = has_option?("style"))
         append_class "btn-" + style.to_s
       else
-        append_class "btn-default"
+        append_class "btn-outline-secondary"
       end
     end
 

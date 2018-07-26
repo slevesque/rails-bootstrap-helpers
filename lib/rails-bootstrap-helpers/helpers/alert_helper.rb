@@ -28,7 +28,7 @@ module RailsBootstrapHelpers::Helpers::AlertHelper
         style = "success"
       end
 
-      unless style == "warning" || style == "default"
+      unless style == "warning" || style == "primary"
         cls << " alert-#{style}"
       end
     end
@@ -41,9 +41,10 @@ module RailsBootstrapHelpers::Helpers::AlertHelper
 
     if options.delete(:dismiss_button)
       content_tag :div, class: cls do
-        button = content_tag :button, "×",
+        button = content_tag :button, "&times;",
           type: "button",
           class: "close",
+          :"aria-label" => "Close",
           :"data-dismiss" => "alert"
 
         button + text
