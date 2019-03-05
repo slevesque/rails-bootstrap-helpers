@@ -1,5 +1,9 @@
 # Rails Bootstrap Helpers
 
+## Version 0.2.0
+
+WIP - In progress to support latest Bootstrap 4.3.x
+
 ## Version 0.1.0
 
 ### New/Changed Features
