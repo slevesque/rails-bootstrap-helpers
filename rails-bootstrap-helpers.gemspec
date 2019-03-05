@@ -18,15 +18,11 @@ Gem::Specification.new do |s|
 
   s.add_dependency 'rails', '~> 5.0'
 
-  s.add_development_dependency "pry-doc"
-  s.add_development_dependency "pry-exception_explorer"
-  s.add_development_dependency "pry-rails"
-  s.add_development_dependency "pry-stack_explorer"
   s.add_development_dependency "bundler"
-  s.add_development_dependency "jeweler"
   s.add_development_dependency "rake"
   s.add_development_dependency "rails"
+  s.add_development_dependency "rubocop"
   s.add_development_dependency "rspec"
-  s.add_development_dependency "simplecov"
-  s.add_development_dependency "test-unit"
+  #s.add_development_dependency "rspec-rails"
+  s.add_development_dependency "byebug"
 end

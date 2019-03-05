@@ -1,5 +1,16 @@
+require 'action_view'
+
 module RailsBootstrapHelpers::Helpers::BaseHelper
+  include ActionView::Helpers::TagHelper
   include RailsBootstrapHelpers::Helpers::OptionsHelper
+
+  attr_accessor :output_buffer
+
+  # Set the icon_set
+  def icon_set(options)
+    return :fas if !options.has_key?(:icon_set)
+    options[:icon_set]
+  end
 
   # Renders the given icon
   #
@@ -8,11 +19,6 @@ module RailsBootstrapHelpers::Helpers::BaseHelper
   # @param icon [String, Symbol] the kind of icon to render
   #
   # @option options [Boolean] :invert (false) if the color of the icon should be inverted
-  def icon_set(options)
-    return "fal" if !options.has_key?(:icon_set)
-    options[:icon_set]
-  end
-
   def icon (icon, options = {})
     options = options.dup
 

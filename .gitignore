@@ -9,3 +9,6 @@ spec/dummy/tmp/
 spec/dummy/.sass-cache
 *.gem
 .ruby-version
+.byebug_history
+.rspec_status
+vendor/
