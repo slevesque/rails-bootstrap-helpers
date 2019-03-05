@@ -4,6 +4,7 @@ begin
 rescue LoadError
   puts 'You must `gem install bundler` and `bundle install` to run rake tasks'
 end
+
 begin
   require 'rdoc/task'
 rescue LoadError
@@ -21,8 +22,6 @@ RDoc::Task.new(:rdoc) do |rdoc|
 end
 
 
-
-
 Bundler::GemHelper.install_tasks
 
 require 'rake/testtask'
@@ -33,6 +32,5 @@ Rake::TestTask.new(:test) do |t|
   t.pattern = 'test/**/*_test.rb'
   t.verbose = false
 end
-
 
 task :default => :test
