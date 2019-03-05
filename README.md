@@ -1,7 +1,7 @@
 # Rails Bootstrap Helpers
 
 Rails Bootstrap Helpers is a plugin for Ruby on Rails that adds view helpers for
-[Bootstrap](http://getbootstrap.com/2.3.2/). It also contains some helpers
+[Bootstrap](https://getbootstrap.com/docs/4.3/getting-started/introduction/). It also contains some helpers
 for [Jasny's Bootstrap extensions](http://jasny.github.io/bootstrap/index.html).
 
 This documentation is for the upcoming release, that is git HEAD.
@@ -19,8 +19,21 @@ Manually include the necessary stylesheets and JavaScript files from Bootstrap.
 
 Although it has no direct dependencies on other gems than Rails, it is necessary
 to include Bootstrap in some way or another to make this gem useful.
-For standard Bootstrap, [bootstrap-sass](https://github.com/thomas-mcdonald/bootstrap-sass) is
-recommended. For Jasny Bootstrap, [jasny-bootstrap-extension-rails](https://github.com/mdedetrich/jasny-bootstrap-extension-rails) is recommended.
+
+We recommended using Yarn or NPM package to install bootstrap and jasny dependencies.
+
+If you don't still have a package.json file in your project.
+
+````bash
+yarn init
+```
+
+and install dependencies
+
+````bash
+yarn add bootstrap
+yarn add jasny-bootstrap
+```
 
 ### JavaScript
 
@@ -32,9 +45,13 @@ uses JavaScript that needs manually initialization:
 * [bs\_popover\_button](#bs_popover_button)
 
 For which JavaScript file to include, follow the
-[Bootstrap documentation](http://getbootstrap.com/2.3.2/javascript.html).
+[Bootstrap documentation](https://getbootstrap.com/docs/4.3/getting-started/javascript/).
 
 ## Usage
+
+
+N.B. Usage document is outdated for now. Will be update soon.
+
 
 ### <a id="common"></a>Common
 
@@ -45,7 +62,7 @@ For which JavaScript file to include, follow the
 <%= icon :edit, invert: true %> # inverts the color of the icon, making it white
 ```
 
-[Bootstrap documentation](http://getbootstrap.com/2.3.2/base-css.html#icons)
+[Bootstrap documentation](https://getbootstrap.com/docs/4.3/extend/icons/)
 
 #### <a id="iconic_icon"></a>iconic\_icon
 
