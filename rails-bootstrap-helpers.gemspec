@@ -5,9 +5,9 @@ require "rails-bootstrap-helpers/version"
 Gem::Specification.new do |s|
   s.name        = "rails-bootstrap-helpers"
   s.version     = RailsBootstrapHelpers::VERSION
-  s.authors     = ["Jacob Carlborg"]
-  s.email       = ["jacob.carlborg@tretti.se"]
-  s.homepage    = "https://github.com/Tretti/rails-bootstrap-helpers"
+  s.authors     = ["Sylvain Lévesque"]
+  s.email       = ["slevesque@gezere.com"]
+  s.homepage    = "https://github.com/slevesque/rails-bootstrap-helpers"
   s.summary     = "A Rails plugin that contains helpers for Bootstrap"
   s.description = "A Rails plugin that contains helpers for Bootstrap"
   s.license     = "MIT"
