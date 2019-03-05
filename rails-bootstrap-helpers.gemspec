@@ -22,7 +22,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency "pry-exception_explorer"
   s.add_development_dependency "pry-rails"
   s.add_development_dependency "pry-stack_explorer"
-  s.add_development_dependency "bundler", "~> 1.16"
+  s.add_development_dependency "bundler"
   s.add_development_dependency "jeweler"
   s.add_development_dependency "rake"
   s.add_development_dependency "rails"
